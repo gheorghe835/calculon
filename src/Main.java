@@ -14,7 +14,7 @@ public class Main {
 
         while (running){
             System.out.println("MENIU");
-            System.out.println("1. Operatiuni matematice :: + - * / ");
+            System.out.println("1. Operatiuni matematice de baza :: + - * / ");
             System.out.println("2. Ridicarea la putere a unui numar.");
             System.out.println("3. Calcularea procentului.");
             System.out.println("4. Calcularea sin, cos, tg, ctg");
@@ -29,7 +29,7 @@ public class Main {
                     case 1:
                         boolean inMainMenu = true;
 
-                        System.out.println("Operatiuni matematice");
+                        System.out.println("Operatiuni matematice de baza");
                         System.out.println("\n ~~~~ Alegeti operatiunea ~~~~");
                         System.out.println("\tAdunarea   :: + ");
                         System.out.println("\tScaderea   :: - ");
@@ -98,6 +98,21 @@ public class Main {
                             inMainMenu = false;
                         }
                     break;
+
+                    case 2:
+                        System.out.println("\n~~~~ Ridicare la putere ~~~~");
+                        System.out.print("Introduceti baza :: ");
+                        double base = scanner.nextDouble(); scanner.nextLine();
+
+                        System.out.print("Introduceti exponentul :: ");
+                        double exponent = scanner.nextDouble(); scanner.nextLine();
+
+                        double powerResult = Math.pow(base,exponent);
+                        System.out.println("Rezultat :: " + base + " ^ " + exponent + " = " + powerResult);
+                        break;
+
+                    
+
 
                 }
             }
