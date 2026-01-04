@@ -18,6 +18,9 @@ public class Main {
             System.out.println("2. Ridicarea la putere a unui numar.");
             System.out.println("3. Calcularea procentului.");
             System.out.println("4. Calcularea sin, cos, tg, ctg");
+            System.out.println("5. Geometrie");
+            System.out.println("6. Algebra");
+            System.out.println("7. Convertori");
             System.out.println("0. EXIT");
 
             System.out.print("Alegeti o optiune :: ");
