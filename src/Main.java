@@ -154,23 +154,325 @@ public class Main {
                         break;
 
                     case 5:
-                        System.out.println("\n~~~~ GEOMETRIE ~~~~");
-                        System.out.println("1. Aria cercului");
-                        System.out.println("2. Circumferinta cercului");
-                        System.out.println("3. Aria patratului");
-                        System.out.println("4. Perimetrul patratului");
-                        System.out.println("5. Aria dreptunghiului");
-                        System.out.println("6. Perimetrul dreptunghiului");
-                        System.out.println("7. Aria triunghiului");
-                        System.out.println("8. Volumul cubului");
-                        System.out.println("0. Inapoi la meniul principal");
+                        boolean inGeomMenu = true;
 
-                        int geomOption = scanner.nextInt(); scanner.nextLine();
+                        while (inGeomMenu){
+                            System.out.println("\n~~~~ GEOMETRIE ~~~~");
+                            System.out.println("1. Aria cercului");
+                            System.out.println("2. Circumferinta cercului");
+                            System.out.println("3. Aria patratului");
+                            System.out.println("4. Perimetrul patratului");
+                            System.out.println("5. Aria dreptunghiului");
+                            System.out.println("6. Perimetrul dreptunghiului");
+                            System.out.println("7. Aria triunghiului");
+                            System.out.println("8. Volumul cubului");
+                            System.out.println("9. Volumul sferei");
+                            System.out.println("0. Inapoi la meniul principal");
 
-                        switch (geomOption){
-                            case 1:
-                                
+                            System.out.print("Alegeti o optiune :: ");
+                            int geomOption = scanner.nextInt(); scanner.nextLine();
+
+                            switch (geomOption){
+                                case 0:
+                                    inMainMenu = false;
+                                    break;
+                                case 1:
+                                    System.out.print("Raza cercului :: ");
+
+                                    if (scanner.hasNextDouble()){
+                                        double radius = scanner.nextDouble();scanner.nextLine();
+
+                                        if (radius > 0){
+                                            double circleAria = Math.PI * radius * radius;
+                                            System.out.printf("Aria cercului cu raza de %.2f = %.2f\n ",radius,circleAria);
+                                        }
+                                        else  if (radius == 0){
+                                            System.out.println("Raza 0 produce un cerc degenerat. Aria = 0.");
+                                        }
+                                        else {
+                                            System.out.println("Eroare.Raza nu poate avea valori negative!.");
+                                            System.out.println("Valoarea absoluta :: " + Math.abs(radius));
+                                        }
+                                    }
+                                    else {
+                                        System.out.println("Eroare. Introduceti o valoare valida.");
+                                        scanner.next();
+                                    }
+                                    break;
+
+                                case 2:
+                                    System.out.print("Raza cercului :: ");
+                                    if (scanner.hasNextDouble()){
+                                        double radius = scanner.nextDouble();scanner.nextLine();
+
+                                        if(radius >= 0){
+                                            double circumference = 2 * Math.PI * radius;
+                                            System.out.printf("Circumferinta cercului cu raza de %.2f = %.2f\n", radius,circumference);
+                                        }
+                                        else {
+                                            System.out.println("Eroare. Raza nu poate avea valori negative!");
+                                        }
+                                    }
+                                    else {
+                                        System.out.println("Eroare. Introduceti o valoare valida.");
+                                        scanner.next();
+                                    }
+                                    break;
+
+                                case 3:
+                                    System.out.print("Latura patratului :: ");
+                                    if (scanner.hasNextDouble()){
+                                        double side = scanner.nextDouble();scanner.nextLine();
+                                        if (side > 0){
+                                            double squareArea = side * side;
+                                            System.out.printf("Aria patratului cu latura de %.2f = %.2f\n",side,squareArea);
+                                        }
+                                        else if (side == 0){
+                                            System.out.println("Latura 0 produce un patrat degenerat.");
+                                        }
+                                        else {
+                                            System.out.println("Eroare. Latura nu poate avea valori negative!");
+                                        }
+                                    }
+                                    else {
+                                        System.out.println("Eroare. Introduceti o valoare valida.");
+                                        scanner.next();
+                                    }
+                                    break;
+
+                                case 4:
+                                    System.out.print("Latura patratului :: ");
+                                    if (scanner.hasNextDouble()){
+                                        double side = scanner.nextDouble();scanner.nextLine();
+                                        if (side > 0){
+                                            double squarePerimeter = 4 * side;
+                                            System.out.printf("Perimetrul patratului cu latura de %.2f = %.2f\n",side,squarePerimeter);
+                                        }
+                                        else if (side == 0){
+                                            System.out.println("Latura 0 produce un patrat degenerat.");
+                                        }
+                                        else {
+                                            System.out.println("Eroare. Latura nu poate avea valori negative!");
+                                        }
+                                    }
+                                    else {
+                                        System.out.println("Eroare. Introduceti o valoare valida.");
+                                        scanner.next();
+                                    }
+                                    break;
+                                case 5:
+                                    System.out.print("Lungimea dreptunghiului :: ");
+                                    if (scanner.hasNextDouble()){
+                                        double length = scanner.nextDouble();scanner.nextLine();
+
+                                        System.out.print("Latimea dreptunghiului :: ");
+                                        if (scanner.hasNextDouble()){
+                                            double high = scanner.nextDouble();scanner.nextLine();
+
+                                            if (length > 0 && high > 0){
+                                                double rectangleArea = length * high;
+                                                System.out.printf("Aria dreptunghiului cu lungimea si latimea de %.2f x %.2f = %.2f\n",length,high,rectangleArea);
+                                            }
+                                            else if (length == 0 || high == 0){
+                                                System.out.println("Valoarea 0 produce un dreptunghi degenerat.");
+                                            }
+                                            else {
+                                                System.out.println("Eroare. Dimensiunile nu pot avea valori negative");
+                                                scanner.next();
+                                            }
+                                        }
+                                        else {
+                                            System.out.println("Eroare. Dimensiunile nu pot avea valori negative");
+                                            scanner.next();
+                                        }
+                                    }
+                                    break;
+
+                                case 6:
+                                    System.out.print("Lungimea dreptunghiului :: ");
+                                    if (scanner.hasNextDouble()){
+                                        double length = scanner.nextDouble();scanner.nextLine();
+
+                                        System.out.print("Latimea dreptunghiului :: ");
+                                        if (scanner.hasNextDouble()){
+                                            double high = scanner.nextDouble();scanner.nextLine();
+
+                                            if (length > 0 && high > 0){
+                                                double rectanglePerimeter = 2 * length + 2 * high;
+                                                System.out.printf("Perimetrul dreptunghiului cu lungimea si latimea de %.2f x %.2f = %.2f\n",length,high,rectanglePerimeter);
+                                            }
+                                            else if (length == 0 || high == 0){
+                                                System.out.println("Valoarea 0 produce un dreptunghi degenerat.");
+                                            }
+                                            else {
+                                                System.out.println("Eroare. Dimensiunile nu pot avea valori negative");
+                                                scanner.next();
+                                            }
+                                        }
+                                        else {
+                                            System.out.println("Eroare. Dimensiunile nu pot avea valori negative");
+                                            scanner.next();
+                                        }
+                                    }
+                                    break;
+
+                                case 7:
+                                    boolean inTriangleMenu = true;
+
+                                    while (inTriangleMenu){
+                                        System.out.println("~~~~ ARIA TRIUNGHIULUI ~~~~");
+                                        System.out.println("1. Baza si inaltume");
+                                        System.out.println("2. Formula lui Heron( 3 laturi )");
+                                        System.out.println("0. Intoarcere in meniu");
+
+                                        System.out.print("Alegeti o optiune :: ");
+                                        int triangleOption = scanner.nextInt();scanner.nextLine();
+
+                                        switch (triangleOption){
+                                            case 0:
+                                                inTriangleMenu = false;
+                                                break;
+
+                                            case 1:
+                                                System.out.print("Introduceti baza :: ");
+                                                if (scanner.hasNextDouble()){
+                                                    base = scanner.nextDouble();scanner.nextLine();
+
+                                                    System.out.print("Introduceti inaltimea :: ");
+                                                    if (scanner.hasNextDouble()){
+                                                        double height = scanner.nextDouble();scanner.nextLine();
+
+                                                        if (base > 0 && height > 0){
+                                                            double triangleArea = (base * height) / 2;
+                                                            System.out.printf("Aria triunghiului cu baza si inaltimea de %.2f x %.2f = %.2f\n",base,height,triangleArea);
+                                                        }
+                                                        else if (base == 0 || height == 0){
+                                                            System.out.println("Dimensiuninile cu valoare de 0 produce un triunghi degenerat");
+                                                        }
+                                                        else {
+                                                            System.out.println("Dimensiunile trebuie sa aiba valori pozitive!");
+                                                        }
+                                                    }
+                                                    else {
+                                                        System.out.println("Eroare. Dimensiunile nu pot avea valori negative!");
+                                                        scanner.next();
+                                                    }
+                                                }
+                                                else {
+                                                    System.out.println("Eroare. Dimensiunile nu pot avea valori negative!");
+                                                    scanner.next();
+                                                }
+                                                break;
+
+                                            case 2:
+                                                System.out.print("Introduceti latura a ::");
+
+                                                if (scanner.hasNextDouble()){
+                                                    double a = scanner.nextDouble();scanner.nextLine();
+
+                                                    System.out.print("Introduceti latura b :: ");
+                                                    if (scanner.hasNextDouble()){
+                                                        double b = scanner.nextDouble();scanner.nextLine();
+
+                                                        System.out.print("Introduceti latura c :: ");
+                                                        if (scanner.hasNextDouble()){
+                                                            double c = scanner.nextDouble();scanner.nextLine();
+
+                                                            if(a > 0 && b > 0 && c > 0){
+                                                                if (((a + b) > c) && ((a + c) > b) && ((b + c) > a)){
+                                                                    double semiperimeter = (a + b + c) / 2;
+                                                                    double heronArea = Math.sqrt(semiperimeter * (semiperimeter - a) * (semiperimeter - b) * (semiperimeter -c));
+                                                                    System.out.printf("Aria triunghilui dupa Heron cu laturile a, b ,c -- %.2f x %.2f x %.2f = %.2f\n",a,b,c,heronArea);
+                                                                }
+                                                                else {
+                                                                    System.out.println("Eroare! Laturile nu formeaza un triunghi valid!");
+                                                                }
+                                                            }
+                                                            else {
+                                                                System.out.println("Eroare! Laturile trebuie sa aiba o valoare pozitiva!");
+                                                            }
+                                                        }
+                                                        else {
+                                                            System.out.println("Eroare! Laturile nu trebuie sa aiba o valoare negativa!");
+                                                            scanner.next();
+                                                        }
+                                                    }
+                                                    else {
+                                                        System.out.println("Eroare! Laturile nu trebuie sa aiba o valoare negativa!");
+                                                        scanner.next();
+                                                    }
+                                                }
+                                                else {
+                                                    System.out.println("Eroare! Laturile nu trebuie sa aiba o valoare negativa!");
+                                                    scanner.next();
+                                                }
+                                                break;
+
+                                            default:
+                                                System.out.println("Optiune invalida!");
+
+                                        }
+                                    }
+                                    break;
+                                case 8:
+                                    System.out.print("Introduceti latura cubului :: ");
+                                    if (scanner.hasNextDouble()){
+                                        double side = scanner.nextDouble();scanner.nextLine();
+
+                                        if (side > 0){
+                                            double cubeVolume = side * side * side;
+                                            System.out.printf("Volumul cubului cu latura de %.2f = %.2f\n",side,cubeVolume);
+                                        }
+                                        else if (side == 0){
+                                            System.out.println("Valoarea 0 produce un cub degenerat.");
+                                        }
+                                        else {
+                                            System.out.println("Eroare! Latura nu poate avea valoare negativa!");
+                                        }
+                                    }
+                                    else {
+                                        System.out.println("Eroare! Latura nu poate avea valoare negativa!");
+                                        scanner.next();
+                                    }
+                                    break;
+
+                                case 9:
+                                    System.out.print("Introduceti raza sferei :: ");
+
+                                    if (scanner.hasNextDouble()){
+                                        double radius = scanner.nextDouble();scanner.nextLine();
+
+                                        if(radius > 0){
+                                            double sphereVolume = (4/3) * Math.PI * Math.pow(radius,3);
+                                            System.out.printf("Volumul sferei cu raza de %.2f = %.2f\n",radius,sphereVolume);
+                                        }
+                                        else if (radius == 0){
+                                            System.out.println("Valoarea 0 a razei formeaza o sfera degenerata.");
+                                        }
+                                        else {
+                                            System.out.println("Eroare! Raza nu poate avea valoare negativa!");
+                                        }
+                                    }
+                                    else {
+                                        System.out.println("Eroare! Raza nu poate avea valoare negativa!");
+                                        scanner.next();
+                                    }
+                                    break;
+
+                                default:
+                                    System.out.println("Optiune invalida!");
+
+                            }
                         }
+                        break;
+
+                    case 6:
+                        boolean inAlgMeniu = true;
+
+                        while (inAlgMeniu){
+                            
+                        }
+
 
                 }
             }
