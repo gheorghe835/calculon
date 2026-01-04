@@ -549,8 +549,148 @@ public class Main {
                         break;
 
                     case 7:
-                        
+                        boolean inConvMeniu = true;
 
+                        while (inConvMeniu){
+                            System.out.println("~~~~ CONVERTORI ~~~~");
+                            System.out.println("1. Grade Celsius <-> Fahrenheit");
+                            System.out.println("2. Metri <-> Pasi");
+                            System.out.println("3. Kilograme <-> Pounds");
+                            System.out.println("4. Litri <-> Galoane");
+
+                            System.out.println("Alegeti o optiune :: ");
+                            int convOption = scanner.nextInt();scanner.nextLine();
+
+                            switch (convOption){
+                                case 0:
+                                    inConvMeniu = false;
+                                    break;
+
+                                case 1:
+                                    System.out.println("~~~~ Grade Celsius <-> Fahrenheit ~~~~");
+                                    System.out.println("1. Grade Celsius <-> Fahrenheit");
+                                    System.out.println("1. Grade Fahrenheit <-> Celsius");
+
+                                    double celsius, fahrenheit;
+
+                                    System.out.print("Alegeti o optiune :: ");
+                                    int tempChoice = scanner.nextInt();scanner.nextLine();
+
+                                    if (tempChoice == 1){
+                                        System.out.print("Celsius :: ");
+                                        celsius = scanner.nextDouble();scanner.nextLine();
+                                        fahrenheit = celsius * 9/5 + 32;
+
+                                        System.out.println(celsius + "°C = " + fahrenheit + "°F");
+                                    }
+                                    else if (tempChoice == 2){
+                                        System.out.print("Fahrenheit :: ");
+                                        fahrenheit = scanner.nextDouble();scanner.nextLine();
+                                        celsius = (fahrenheit - 32) * 5/9;
+
+                                        System.out.println(fahrenheit + "°F = " + celsius + "°C");
+                                    }
+                                    else {
+                                        System.out.println("Optiune invalida");
+                                    }
+                                    break;
+
+                                case 2:
+                                    System.out.println("~~~~ Metri <-> Pasi ~~~~");
+                                    System.out.println("1. Metri <-> Pasi");
+                                    System.out.println("2. Feet <-> Metri");
+
+                                    double metri, feet;
+
+                                    System.out.print("Alegeti o optiune :: ");
+                                    int distanceChoice = scanner.nextInt();scanner.nextLine();
+
+                                    if (distanceChoice == 1){
+                                        System.out.print("Metri :: ");
+                                        metri = scanner.nextDouble();scanner.nextLine();
+                                        feet = metri * 3.28084;
+
+                                        System.out.print(metri + " metri = " + feet + " pasi.");
+                                    }
+                                    else if (distanceChoice == 2){
+                                        System.out.print("Feet :: ");
+                                        feet = scanner.nextDouble();scanner.nextLine();
+                                        metri = feet * 0.3048;
+
+                                        System.out.println(feet + " pasi = " + metri + " metri.");
+                                    }
+                                    else {
+                                        System.out.println("Optiune invalida!");
+                                    }
+                                    break;
+
+                                case 3:
+                                    System.out.println("~~~~ Kilograme <-> Pounds ~~~~");
+                                    System.out.println("1. Kilograme <-> Pounds");
+                                    System.out.println("2. Kilograme <-> Pounds");
+
+                                    double kilogram, pounds;
+
+                                    System.out.print("Alegeti o optiune :: ");
+                                    int weightChoice = scanner.nextInt();scanner.nextLine();
+
+                                    if (weightChoice == 1){
+                                        System.out.print("Kilograme :: ");
+                                        kilogram = scanner.nextDouble();scanner.nextLine();
+                                        pounds = kilogram * 2.20462;
+
+                                        System.out.println(kilogram + " kilograme = " + pounds + " pounds.");
+                                    }
+                                    else if (weightChoice == 2){
+                                        System.out.print("Pounds :: ");
+                                        pounds = scanner.nextDouble();scanner.nextLine();
+                                        kilogram = pounds * 0.45359237;
+
+                                        System.out.println(pounds + " ponds = " + kilogram + " kilograme.");
+                                    }
+                                    else {
+                                        System.out.println("Optiune invalida!");
+                                    }
+                                    break;
+
+                                case 4:
+                                    System.out.println("~~~~ Litri <-> Galoane ~~~~");
+                                    System.out.println("1. Litri <-> Galoane");
+                                    System.out.println("2. Litri <-> Galoane");
+
+                                    double liter, galon;
+
+                                    System.out.print("Alegeti o optiune :: ");
+                                    int liquidChoice = scanner.nextInt();scanner.nextLine();
+
+                                    if (liquidChoice == 1){
+                                        System.out.print("Litri :: ");
+                                        liter = scanner.nextDouble();scanner.nextLine();
+                                        galon = liter / 3.78541;
+
+                                        System.out.println(liter + " litri = " + galon + " galoane.");
+                                    }
+                                    else if (liquidChoice == 2){
+                                        System.out.print("Galoane :: ");
+                                        galon = scanner.nextDouble();scanner.nextLine();
+                                        liter = galon * 3.785;
+
+                                        System.out.println(galon + " galoane = " + liter + " litri.");
+                                    }
+                                    else {
+                                        System.out.println("Optiune invalida!");
+                                    }
+                                    break;
+
+                                default:
+                                    System.out.println("Optiune invalida!");
+
+                            }
+                        }
+                        break;
+
+                    default:
+                        System.out.println("Optiune invalida!");
 
                 }
             }
