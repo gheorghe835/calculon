@@ -3,9 +3,9 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
-        System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-        System.out.println("~~~~~~~~Bine ati venit~~~~~~~~~");
-        System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+        System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+        System.out.println("~~~~~~~~~~~~~~ Bine ati venit ~~~~~~~~~~~~~~~");
+        System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
 
         //Operatiuni matematice
 
@@ -13,7 +13,7 @@ public class Main {
         boolean running = true;
 
         while (running){
-            System.out.println("MENIU");
+            System.out.println("~~~~~~~~~~~~~~~~~~ MENIU ~~~~~~~~~~~~~~~~~~~");
             System.out.println("1. Operatiuni matematice de baza :: + - * / ");
             System.out.println("2. Ridicarea la putere a unui numar.");
             System.out.println("3. Calcularea procentului.");
@@ -22,13 +22,15 @@ public class Main {
             System.out.println("6. Algebra");
             System.out.println("7. Convertori");
             System.out.println("0. EXIT");
+            System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
 
             System.out.print("Alegeti o optiune :: ");
             int option = scanner.nextInt(); scanner.nextLine();
 
                 switch (option){
                     case 0:
-                        running = false; break;
+                        running = false;
+                        System.out.println("La revedere ... ");break;
                     case 1:
                         boolean inMainMenu = true;
 
@@ -91,7 +93,9 @@ public class Main {
                         }
 
                         if (validOperation) {
-                            System.out.println("Rezultat :: " + firstNumber + " " + operator + " " + secondNumber + " = " + result);
+                            System.out.print("Rezultat :: " + firstNumber + " " + operator + " " + secondNumber + " = ");
+                            System.out.printf("%.2f ",result);
+                            System.out.println();
                         }
 
                          // intrebam utilizatorul daca vrea sa faca o alta operatiune
@@ -154,9 +158,9 @@ public class Main {
                         break;
 
                     case 5:
-                        boolean inGeomMenu = true;
+                        inMainMenu = true;
 
-                        while (inGeomMenu){
+                        while (inMainMenu){
                             System.out.println("\n~~~~ GEOMETRIE ~~~~");
                             System.out.println("1. Aria cercului");
                             System.out.println("2. Circumferinta cercului");
@@ -467,9 +471,9 @@ public class Main {
                         break;
 
                     case 6:
-                        boolean inAlgMeniu = true;
+                        inMainMenu = true;
 
-                        while (inAlgMeniu){
+                        while (inMainMenu){
                             System.out.println("~~~~ ALGEBRA ~~~~");
                             System.out.println("1. Rezolvare ecuație de gradul 1: ax + b = 0");
                             System.out.println("2. Rezolvare ecuație de gradul 2: ax² + bx + c = 0");
@@ -481,7 +485,7 @@ public class Main {
 
                             switch (algebraOption){
                                 case 0:
-                                    inAlgMeniu = false;
+                                    inMainMenu = false;
                                     break;
 
                                 case 1:
@@ -516,7 +520,7 @@ public class Main {
                                     double delta = b * b - 4 * a * c;
 
                                     if (delta < 0){
-                                        System.out.print("Ecuatia nu are solutii!");
+                                        System.out.println("Ecuatia nu are solutii!");
                                     }
                                     else if (delta == 0){
                                         double x = -b / (2 * a);
@@ -536,7 +540,7 @@ public class Main {
 
                                     long factorial = 1;
 
-                                    for (int i = 0; i <= n; i++){
+                                    for (int i = 1; i <= n; i++){
                                         factorial *= i;
                                     }
                                     System.out.println(n + " ! = " + factorial);
@@ -549,9 +553,9 @@ public class Main {
                         break;
 
                     case 7:
-                        boolean inConvMeniu = true;
+                        inMainMenu = true;
 
-                        while (inConvMeniu){
+                        while (inMainMenu){
                             System.out.println("~~~~ CONVERTORI ~~~~");
                             System.out.println("1. Grade Celsius <-> Fahrenheit");
                             System.out.println("2. Metri <-> Pasi");
@@ -563,7 +567,7 @@ public class Main {
 
                             switch (convOption){
                                 case 0:
-                                    inConvMeniu = false;
+                                    inMainMenu = false;
                                     break;
 
                                 case 1:
@@ -694,14 +698,5 @@ public class Main {
 
                 }
             }
-
-
-
-
-
-
-
-
-
     }
 }
