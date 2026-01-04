@@ -122,7 +122,35 @@ public class Main {
                         double percentageResult = (total * percentage) / 100;
                         System.out.println(percentage + " % din " + total + " = " + percentageResult);
                         break;
-                        
+
+                    case 4:
+                        System.out.println("\n~~~~ FUNCTII TRIGONOMETRICE ~~~~");
+                        System.out.print("Introduceti unghiul in grade :: ");
+                        double angle = scanner.nextDouble();scanner.nextLine();
+
+                        // convertim din grade in radiani
+                        double radians = Math.toRadians(angle);
+
+                        System.out.println("sin(" + angle + "°) = " + Math.sin(radians));
+                        System.out.println("cos(" + angle + "°) = " + Math.cos(radians));
+
+                        // verificam pentru tangenta si contagenta
+                        if (Math.cos(radians) != 0){
+                            System.out.println("tg(" + angle + "°) = " + Math.tan(radians));
+                        }
+                        else {
+                            System.out.println("tg(" + angle + "°) = nedefenit.");
+                        }
+
+                        if (Math.sin(radians) != 0){
+                            System.out.println("ctg(" + angle + "°) = " + Math.tan(radians));
+                        }
+                        else {
+                            System.out.println("ctg(" + angle + "°) = nedefenit.");
+                        }
+                        break;
+
+
 
                 }
             }
