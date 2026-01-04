@@ -470,8 +470,86 @@ public class Main {
                         boolean inAlgMeniu = true;
 
                         while (inAlgMeniu){
-                            
+                            System.out.println("~~~~ ALGEBRA ~~~~");
+                            System.out.println("1. Rezolvare ecuație de gradul 1: ax + b = 0");
+                            System.out.println("2. Rezolvare ecuație de gradul 2: ax² + bx + c = 0");
+                            System.out.println("3. Calcul factorial");
+                            System.out.println("0. Inapoi in meniu principal");
+
+                            System.out.println("Alegeti o optiune :: ");
+                            int algebraOption = scanner.nextInt();scanner.nextLine();
+
+                            switch (algebraOption){
+                                case 0:
+                                    inAlgMeniu = false;
+                                    break;
+
+                                case 1:
+                                    System.out.print("Introduceti valoarea a :: ");
+                                    double a = scanner.nextDouble();scanner.nextLine();
+
+                                    System.out.print("Introduceti valoarea lui b :: ");
+                                    double b = scanner.nextDouble();scanner.nextLine();
+
+                                    if (a == 0){
+                                        if (b == 0){
+                                            System.out.println("Infinitate de solutii!");
+                                        }
+                                        else {
+                                            System.out.println("Ecuatia nu are solutii!");
+                                        }
+                                    }
+                                    else {
+                                        double x = -b / a;
+                                        System.out.printf("x = %.2f\n",x);
+                                    }
+                                    break;
+
+                                case 2:
+                                    System.out.print("Introduceti valoarea lui a :: ");
+                                    a = scanner.nextDouble();scanner.nextLine();
+                                    System.out.print("Introduceti valoarea lui b :: ");
+                                    b = scanner.nextDouble();scanner.nextLine();
+                                    System.out.print("Introduceti valoarea lui c :: ");
+                                    double c = scanner.nextDouble();scanner.nextLine();
+
+                                    double delta = b * b - 4 * a * c;
+
+                                    if (delta < 0){
+                                        System.out.print("Ecuatia nu are solutii!");
+                                    }
+                                    else if (delta == 0){
+                                        double x = -b / (2 * a);
+                                        System.out.printf("x = %.2f\n",x);
+                                    }
+                                    else {
+                                        double x1 = (-b + Math.sqrt(delta)) / (2 * a);
+                                        double x2 = (-b - Math.sqrt(delta)) / (2 * a);
+
+                                        System.out.printf("x1 = %.2f\n",x1);
+                                        System.out.printf("x2 = %.2f\n",x2);
+                                    }
+                                    break;
+                                case 3:
+                                    System.out.print("Introduceti valoarea N :: ");
+                                    int n = scanner.nextInt();scanner.nextLine();
+
+                                    long factorial = 1;
+
+                                    for (int i = 0; i <= n; i++){
+                                        factorial *= i;
+                                    }
+                                    System.out.println(n + " ! = " + factorial);
+                                    break;
+
+                                default:
+                                    System.out.println("Optiune invalida!");
+                            }
                         }
+                        break;
+
+                    case 7:
+                        
 
 
                 }
