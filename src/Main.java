@@ -153,7 +153,24 @@ public class Main {
                         }
                         break;
 
+                    case 5:
+                        System.out.println("\n~~~~ GEOMETRIE ~~~~");
+                        System.out.println("1. Aria cercului");
+                        System.out.println("2. Circumferinta cercului");
+                        System.out.println("3. Aria patratului");
+                        System.out.println("4. Perimetrul patratului");
+                        System.out.println("5. Aria dreptunghiului");
+                        System.out.println("6. Perimetrul dreptunghiului");
+                        System.out.println("7. Aria triunghiului");
+                        System.out.println("8. Volumul cubului");
+                        System.out.println("0. Inapoi la meniul principal");
 
+                        int geomOption = scanner.nextInt(); scanner.nextLine();
+
+                        switch (geomOption){
+                            case 1:
+                                
+                        }
 
                 }
             }
