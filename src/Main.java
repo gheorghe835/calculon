@@ -561,6 +561,7 @@ public class Main {
                             System.out.println("2. Metri <-> Pasi");
                             System.out.println("3. Kilograme <-> Pounds");
                             System.out.println("4. Litri <-> Galoane");
+                            System.out.println("0. Intorcere in meniul principal");
 
                             System.out.println("Alegeti o optiune :: ");
                             int convOption = scanner.nextInt();scanner.nextLine();
