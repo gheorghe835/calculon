@@ -29,7 +29,7 @@ public class Main {
                     case 1:
                         boolean inMainMenu = true;
 
-                        System.out.println("Operatiuni matematice de baza");
+                        System.out.println("\n-+*\\ OPERATIUNI MATEMATICE DE BAZA /*+-");
                         System.out.println("\n ~~~~ Alegeti operatiunea ~~~~");
                         System.out.println("\tAdunarea   :: + ");
                         System.out.println("\tScaderea   :: - ");
@@ -100,7 +100,7 @@ public class Main {
                     break;
 
                     case 2:
-                        System.out.println("\n~~~~ Ridicare la putere ~~~~");
+                        System.out.println("\n~~~~ RIDICARE LA PUTERE ~~~~");
                         System.out.print("Introduceti baza :: ");
                         double base = scanner.nextDouble(); scanner.nextLine();
 
@@ -111,8 +111,18 @@ public class Main {
                         System.out.println("Rezultat :: " + base + " ^ " + exponent + " = " + powerResult);
                         break;
 
-                    
+                    case 3:
+                        System.out.println("\n~~~~ CALCUL PROCENT ~~~~");
+                        System.out.print("Introduceti numarul total :: ");
+                        double total = scanner.nextDouble();scanner.nextLine();
 
+                        System.out.print("Introduceti procentul :: ");
+                        double percentage = scanner.nextDouble();scanner.nextLine();
+
+                        double percentageResult = (total * percentage) / 100;
+                        System.out.println(percentage + " % din " + total + " = " + percentageResult);
+                        break;
+                        
 
                 }
             }
