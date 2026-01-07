@@ -479,6 +479,7 @@ public class Main {
                             System.out.println("2. Rezolvare ecuație de gradul 2: ax² + bx + c = 0");
                             System.out.println("3. Calcul factorial");
                             System.out.println("0. Inapoi in meniu principal");
+                            System.out.println("----------------------------");
 
                             System.out.println("Alegeti o optiune :: ");
                             int algebraOption = scanner.nextInt();scanner.nextLine();
